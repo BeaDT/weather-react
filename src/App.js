@@ -276,6 +276,13 @@ function App() {
             <hr />
           </div>
         </div>
+        <footer className="gitHub-link">
+      <a href="https://github.com/BeaDT/Weather-app" target="blank"
+        >Open-source code</a
+      >
+      by Beatrice Del Toro
+    </footer>
+    <script src="script.js"></script>
       </div>
     </div>
   );
