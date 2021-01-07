@@ -3,16 +3,24 @@ import axios from "axios";
 import "./Weather.css";
 
 
-export default function Weather() {
+export default function Weather(props) {
   
- const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null)
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
-    setTemperature(response.data.main.temp);
-    setReady(true);
+setWeatherData({
+  ready: true,
+  temperature: response.data.main.temp,
+  description:response.data.weather[0].description,
+  date:"Wednesday 9:00",
+  iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+  humidity: response.data.main.humidity,
+  wind:response.data.wind.speed,
+  city: response.data.name
+});
+
   }
 
-  if (ready) {
+  if (weatherData.ready) {
   return (
     <div className="Weather">
       <div className="container">
@@ -230,7 +238,7 @@ export default function Weather() {
         </div>
         <div className="top-left-info">
           <div className="current-city">
-            <h1 id="chosen-city">city</h1>
+            <h1 id="chosen-city">{weatherData.city}</h1>
           </div>
 
           <div className="first-left-line">
@@ -240,12 +248,12 @@ export default function Weather() {
           <div className="current-weather-info">
             <p>
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt=""
+                src={weatherData.iconUrl}
+                alt={weatherData.description}
                 className="main-icon"
               />
-              <span> Cloudy </span>
-              <span className="temp-number">{Math.round(temperature)}</span>
+              <span className="text-capitalize">{weatherData.description} </span>
+              <span className="temp-number">{Math.round(weatherData.temperature)}</span>
               <span className="units">
                 <a href="/" className="active">
                   °C
@@ -257,7 +265,7 @@ export default function Weather() {
 
           <div className="update">
             Updated:
-            <span>Wednesday 12:45</span>
+            <span>{weatherData.date}</span>
           </div>
         </div>
 
@@ -266,11 +274,11 @@ export default function Weather() {
             <div className="row">
               <div className="col">
                 <i className="fas fa-tint"></i>
-                Humidity: <span>60</span>%
+                Humidity: <span>{weatherData.humidity}</span>%
               </div>
               <div className="col">
                 <i className="fas fa-wind"></i>
-                Wind: <span>12</span>km/h
+                Wind: <span>{weatherData.wind}</span>km/h
               </div>
             </div>
           </div>
@@ -284,8 +292,7 @@ export default function Weather() {
   } else {
 
 const apiKey = "2c01c84d2f25936279dc3368bd18575f";
-let city = "New York";
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
 
 return "Loading...";

@@ -6,7 +6,8 @@ export default function App() {
 return (
     <div className="App">
       <div className="container">
-       <Weather />
+       <Weather defaultCity="New York"/>
+       <br />
        <footer className="gitHub-link">
       <a href="https://github.com/BeaDT/Weather-app" target="blank"
         >Open-source code</a
