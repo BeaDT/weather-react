@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast"
 import axios from "axios";
 import "./Weather.css";
 import "./WeatherTemperature.css"
@@ -257,6 +258,7 @@ axios.get(apiUrl).then(handleResponse);
           </svg>
         </div>
         <WeatherInfo data={weatherData}/>
+        <WeatherForecast />
       </div>
     </div>
   );
