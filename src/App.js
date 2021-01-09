@@ -9,9 +9,9 @@ return (
        <Weather defaultCity="New York"/>
        <br />
        <footer className="gitHub-link">
-      <a href="https://github.com/BeaDT/Weather-app" target="blank"
-        >Open-source code</a
-      >
+      <a href="https://github.com/BeaDT/weather-react" target="_blank"
+        >Open-source code
+        </a>
       {" "} by Beatrice Del Toro
     </footer>
       </div>
