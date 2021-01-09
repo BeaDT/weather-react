@@ -1,12 +1,14 @@
 .Weather p {
   text-align: left;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
   color: #10171a;
   margin-left: 5px;
   position: relative;
   bottom: 110px;
   color: #292841;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .Weather svg {
@@ -85,7 +87,7 @@
   margin: 30px 0px 12px 0px;
   padding-top: 20px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
