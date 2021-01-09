@@ -22,9 +22,9 @@
   display: block;
   margin: 0 auto;
   position: relative;
-  top: 95px;
+  top: 135px;
   left: 136px;
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .Weather i {
@@ -48,10 +48,9 @@
 }
 
 .Weather .enter-city {
-  text-align: right;
+  text-align: center;
   position: relative;
   top: 20px;
-  right: 20px;
   padding: 5px;
 }
 
