@@ -27,7 +27,7 @@ setWeatherData({
 
   function search() {
     const apiKey = "2c01c84d2f25936279dc3368bd18575f";
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
   }
 
