@@ -55,9 +55,6 @@ axios.get(apiUrl).then(handleResponse);
             <button type="submit" className="btn btn-info">
               Search
             </button>
-            <button type="submit" className="btn btn-success">
-              Your Location
-            </button>
           </form>
         </div>
         <div className="img">
